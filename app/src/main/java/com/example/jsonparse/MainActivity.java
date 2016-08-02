@@ -5,9 +5,17 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -58,5 +66,18 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
+    }
+
+    public void doGSONMagic(View view) {
+        //gson library to build array list
+        //create gson object from array list of students
+        Gson gson = new GsonBuilder().create();
+        Type listType = new TypeToken<List<Student>>() {}.getType();
+
+        //use listype for array not gor object
+        ArrayList<Student> students = gson.fromJson(jsonString, listType);
+        for (Student student : students) {
+            Log.d(TAG, "doGSONMagic: " + student.name + " " + student.grade + " " + student.age);
+        }
     }
 }

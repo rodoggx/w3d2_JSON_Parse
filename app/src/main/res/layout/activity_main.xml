@@ -29,4 +29,11 @@
         android:layout_height="wrap_content"
         android:text="JSON Object"/>
 
+    <Button
+        android:id="@+id/mBtn3"
+        android:onClick="doGSONMagic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="GSON Array"/>
+
 </LinearLayout>
