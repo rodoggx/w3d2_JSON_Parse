@@ -19,5 +19,14 @@
         android:id="@+id/mBtn1"
         android:onClick="doMagic"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="JSON Array"/>
+
+    <Button
+        android:id="@+id/mBtn2"
+        android:onClick="doComplexMagic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="JSON Object"/>
+
 </LinearLayout>
