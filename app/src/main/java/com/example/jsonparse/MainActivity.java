@@ -31,7 +31,9 @@ public class MainActivity extends AppCompatActivity {
                         = new JSONObject(jsonArray.get(i).toString());
                 //add key from json structure
                 String name = jsonObject.getString("name");
-                Log.d(TAG, "doMagic: " + i + " " + name);
+                String grade = jsonObject.getString("grade");
+                String age = jsonObject.getString("age");
+                Log.d(TAG, "doMagic: " + i + " " + name + " " + grade + " " + age);
             }
         } catch (JSONException e) {
             e.printStackTrace();
