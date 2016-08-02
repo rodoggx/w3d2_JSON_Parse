@@ -80,4 +80,14 @@ public class MainActivity extends AppCompatActivity {
             Log.d(TAG, "doGSONMagic: " + student.name + " " + student.grade + " " + student.age);
         }
     }
+
+    public void doGSONComplexMagic(View view) {
+        Gson gson = new GsonBuilder().create();
+        Result result = gson.fromJson(jsonComplexString, Result.class);
+
+        //get a single object called result
+        for (Student student : result.students) {
+            Log.d(TAG, "doGSONComplexMagic: " + student.name + " " + student.grade + " " + student.age);
+        }
+    }
 }
