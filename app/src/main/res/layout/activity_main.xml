@@ -15,6 +15,12 @@
         android:layout_height="wrap_content"
         android:text="Hello World!" />
 
+    <ListView
+        android:id="@+id/mList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </ListView>
+
     <Button
         android:id="@+id/mBtn1"
         android:onClick="doMagic"
