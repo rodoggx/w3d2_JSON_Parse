@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
    private List<String> dataList =
            Arrays.asList(jsonComplexString);
 
-    private ArrayAdapter<String> arrayAdapter;
+    private StudentsAdapter<String> arrayAdapter;
 
     private ArrayList<String> dataArrayList = new ArrayList<String>();
 
@@ -51,20 +51,22 @@ public class MainActivity extends AppCompatActivity {
         Result result = gson.fromJson(jsonComplexString, Result.class);
 
         for (Student student : result.students) {
-            if (true) {
+
                 dataArrayList.add(student.name + " " + student.grade + " " + student.age);
-            }
+
             Log.d(TAG, "doGSONComplexMagic: " + student.name + " " + student.grade + " " + student.age);
         }
 
             arrayAdapter =
-                new ArrayAdapter<String>(
+                new StudentsAdapter<String>(
                         this,
                         //android.R.layout.simple_list_item_1, used for default android layout, code below for custom
                         //android.R.layout.activity_list_item,
                         R.layout.activity_list_item,
                         R.id.l_item_txt,
                         dataArrayList);
+
+
 
         //attach adapter to listview
         mListView.setAdapter(arrayAdapter);
